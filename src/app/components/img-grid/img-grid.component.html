@@ -1,0 +1,7 @@
+<div class="row">
+    <div class="col-md-3 mb-5" *ngFor="let img of imgs">
+
+        <img [src]="img.webformatURL" class="img-fluid cursor" (click)="onClick(img)">
+
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
+    <div class="col-xs-10">
+
+
+        <div class="container-fluid center" style="padding-left: 70px; padding-right: 70px;">
+            <a class="navbar-brand" routerLink="/">
+                <img src="../../../assets/images/suplos.png" alt="" width="194" height="80" class="img-fluid">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+  </button>
+        </div>
+    </div>
+    <div class="col">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <form class="d-flex" style="text-align: center;">
+                <input class="form-control" type="search" placeholder="buscar" aria-label="Search" #txtBuscar (keyup.enter)="buscarPelicula(txtBuscar.value)">
+                <!-- <button class="btn btn-info" type="submit"> Buscar
+
+              </button> -->
+            </form>
+        </div>
+
+    </div>
+
+</nav>
