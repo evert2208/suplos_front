@@ -36,4 +36,31 @@ export class ServicioService {
       })
     );
   }
+
+  getDetalles(id: string) {
+    const params={...this.params, id: id}
+    return this.http.get<Hit>(`${this.baseUrl}`,{
+      params
+    }).pipe(
+      catchError(err => of(null))
+    );
+  }
+
+  buscarImg(texto: string): Observable<Hit[]> {
+    const params={...this.params, q: texto}
+   return this.http.get<Data>(`${this.baseUrl}`,{
+      params
+    }).pipe(
+      map(resp => resp.hits)
+    )
+  }
+
+  categoria(category: string): Observable<Hit[]>{
+    const params ={...this.params, category: category}
+    return this.http.get<Data>(`${this.baseUrl}`,{
+      params
+    }).pipe(
+      map(resp => resp.hits)
+    )
+  }
 }

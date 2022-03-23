@@ -16,7 +16,6 @@ export class ImgGridComponent implements OnInit {
   }
 
   onClick(img: Hit){
-    //console.log(movie);
     this.router.navigate(['/detalle',img.id]);
   }
 

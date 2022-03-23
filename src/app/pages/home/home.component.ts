@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hit } from 'src/app/interface/data';
 import { ServicioService } from 'src/app/services/servicio.service';
 
@@ -11,24 +12,8 @@ export class HomeComponent implements OnInit {
 
   public imgs: Hit[]=[];
 
-
-  @HostListener('window:scroll',['$event'])
-  onScroll(){
-    const pos= (document.documentElement.scrollTop||document.body.scrollTop)+1450;
-    const max=(document.documentElement.scrollHeight||document.body.scrollHeight);
-
-    if (pos>max){
-
-     if (this.servicioServices.cargando){return;}
-
-      this.servicioServices.getImg().subscribe(imgs =>{
-      this.imgs.push(...imgs);
-      })
-    }
-
-  }
-
-  constructor(private servicioServices: ServicioService) { }
+  constructor(private servicioServices: ServicioService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.servicioServices.getImg()
@@ -38,6 +23,15 @@ export class HomeComponent implements OnInit {
 
 
     });
+  }
+
+  buscarCat(category: string){
+    category= category.trim();
+    if(category.length===0){
+      return;
+    }
+    return this.router.navigate(['/cat',category]);
+
   }
 
 }

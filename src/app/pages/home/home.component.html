@@ -1,7 +1,26 @@
 <div style="padding-top: 70px; padding-bottom: 20px;">
 
     <div class="container">
-        <h2 class="mt-5" style="padding-bottom: 10px;">Imagenes</h2>
+        <div class="row">
+            <div class="col">
+                <h2 class="mt-5" style="padding-bottom: 10px;">Imagenes</h2>
+                <div class="dropdown" style="text-align: right; padding-right: 100px;">
+                    <button class="btn btn-secondary dropdown-toggle" style="text-align: left !important" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Categoria
+          </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><button class="dropdown-item" value="science" #catBuscar (click)="buscarCat(catBuscar.value)">Science</button></li>
+                        <li><button class="dropdown-item" value="education" #catBuscar (click)="buscarCat(catBuscar.value)">Education</button></li>
+                        <li><button class="dropdown-item" value="people" #catBuscar (click)="buscarCat(catBuscar.value)">People</button></li>
+                        <li><button class="dropdown-item" value="feelings" #catBuscar (click)="buscarCat(catBuscar.value)">Feelings</button></li>
+                        <li><button class="dropdown-item" value="computer" #catBuscar (click)="buscarCat(catBuscar.value)">Computer</button></li>
+                        <li><button class="dropdown-item" value="buildings" #catBuscar (click)="buscarCat(catBuscar.value)">Buildings</button></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
         <app-img-grid *ngIf="imgs.length>0" [imgs]="imgs"></app-img-grid>
 
     </div>
