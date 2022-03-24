@@ -22,7 +22,7 @@ export class CategoriaComponent implements OnInit {
       //console.log(params.category);
       this.category=params.category;
       // llama el servicio
-      this.servicioService.categoria(params.category).subscribe(imgs =>{
+      this.servicioService.getcategoria(params.category).subscribe(imgs =>{
         //console.log(imgs);
         this.imgs=imgs;
       })

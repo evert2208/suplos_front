@@ -55,7 +55,7 @@ export class ServicioService {
     )
   }
 
-  categoria(category: string): Observable<Hit[]>{
+  getcategoria(category: string): Observable<Hit[]>{
     const params ={...this.params, category: category}
     return this.http.get<Data>(`${this.baseUrl}`,{
       params
