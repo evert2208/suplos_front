@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
-import { Hit } from 'src/app/interface/data';
+import { filter } from 'rxjs/operators';
+import { Data, Hit } from 'src/app/interface/data';
 import { ServicioService } from 'src/app/services/servicio.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { ServicioService } from 'src/app/services/servicio.service';
 })
 export class DetalleComponent implements OnInit {
 
-  public imagen: Hit | any;
+  public imagen: Data | any;
 
 
 
@@ -46,6 +47,8 @@ export class DetalleComponent implements OnInit {
       }
       this.imagen= imagen;
       console.log(imagen);
+
+
     });
   }
 

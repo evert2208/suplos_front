@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Hit } from 'src/app/interface/data';
@@ -13,7 +14,8 @@ export class BuscarComponent implements OnInit {
   public texto: string='';
   public imgs: Hit[] =[];
   constructor(private activatedRoute: ActivatedRoute,
-    private servicioService: ServicioService) { }
+    private servicioService: ServicioService,
+    private location: Location) { }
 
   ngOnInit(): void {
 
@@ -28,4 +30,7 @@ export class BuscarComponent implements OnInit {
     })
   }
 
+  onRegresar(){
+    this.location.back();
+  }
 }
